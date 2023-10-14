@@ -25,6 +25,7 @@ calcUarmOverTime step init_angle init_velocity init_height time = do
 
 graphUarmToTime :: Double -> Double -> IO ()
 graphUarmToTime x y = do
-    let new_line = replicate (round y) ' ' ++ "o"
+    let coords = show x ++ " " ++ show y
+    let new_line = replicate (round y) ' ' ++ "o      " ++ coords
 
     print new_line
