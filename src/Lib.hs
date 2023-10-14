@@ -23,14 +23,6 @@ calcUarmOverTime step init_angle init_velocity init_height time = do
     graphUarmToTime time y
     unless (y <= 0) $ calcUarmOverTime step init_angle init_velocity init_height (time + step)
 
-insertCharAtStart :: Char -> String -> String
-insertCharAtStart char str = char : str
-
-isEmptyList :: [a] -> Bool
-isEmptyList xs = case xs of
-  [] -> True
-  _  -> False
-
 graphUarmToTime :: Double -> Double -> IO ()
 graphUarmToTime x y = do
     let new_line = replicate (round y) ' ' ++ "o"
